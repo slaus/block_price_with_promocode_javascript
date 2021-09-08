@@ -1,0 +1,201 @@
+.promo-block {
+    line-height: 70px;
+}
+.pay-block {
+    position: relative;
+    overflow: hidden;
+}
+.pay-block .btn-price-bg {
+    z-index: 1;
+	transition: .3s;
+}
+.pay-variant {
+    position: absolute;
+    background: #fff;
+    left: 0;
+    top: 100%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: .3s;
+    z-index: 2;
+	text-align: center;
+}
+.pay-block:hover .pay-variant {
+    top: 0%;
+}
+.pay-block:hover .btn-price-bg {
+    transform: translateY(50px);
+	transition: .3s;
+}
+.pay-variant iframe {
+    width: 132px;
+    height: 26px;
+    border: none;
+    display: block;
+    text-align: center;
+    margin: 2px;
+}
+#discount-code {
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+    background: transparent;
+	transition: 0.3s;
+	border: none;
+}
+#discount-code:focus {
+	border: none;
+	background: #fafafa;
+    transition: 0.3s;
+	outline: none;
+}
+#discount-code[disabled="true"] {
+	cursor: default;
+	background: transparent;
+}
+.price-table tr td {
+	padding: .5rem;
+}
+.price-table tr td {
+	border: none;
+}
+.price-table tr td:not(:first-child), .price-table tr th:not(:first-child) {
+	width: 20%;
+	vertical-align: middle;
+}
+.price-table tr td:not(:first-child) {
+	text-align: center;
+}
+.price-table tr td .icon {
+    margin-bottom: 0;
+    font-size: 26px;
+}
+.price-table tr td .ti-minus {
+    color: #333;
+}
+.our_pricing {
+	overflow-x: hidden;
+}
+
+
+/* MEDIA QUERIES FOR MOBILE */
+@media screen and (max-width: 991px) {
+  body.body-fixed {
+	  overflow: hidden;
+  }
+  .navbar.navbar-white {
+    background: #fff;
+	  padding-right: 15px;
+	  height: 100%;
+  }
+  .navbar-nav {
+    padding-top: 20px;
+	  width: 100%;
+	  height: calc(100% - 118px);
+	  justify-content: center;
+  }
+  .collapse.show {
+    height: 100%;
+  }
+  .navbar-light .navbar-nav .nav-link {
+    text-align: center;
+	  color: #111;
+	  padding: 5px 15px;
+    font-size: 140%;
+  }
+  .container {
+    width: 100%;
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .pricingTable .title {
+    font-size: 14px;
+  }
+  .pricingTable .price-value {
+    font-size: 20px;
+  }
+  .table td, .table th {
+    font-size: 14px;
+    line-height: 16px;
+  }
+  .price-table tr td .icon {
+    font-size: 18px;
+  }
+  .pricingTable .icon {
+    display: none;
+  }
+  .pricingTable .pricingTable-header {
+    margin-top: 10px;
+  }
+  /* Force table to not be like tables anymore */
+  table, thead, tbody, th, td, tr { 
+    display: block; 
+  }
+  /* Hide table headers (but not display: none;, for accessibility) */
+  .price-table thead tr { 
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+  .price-table td { 
+    /* Behave  like a "row" */
+    border: none;
+    border-bottom: 1px solid #eee; 
+    position: relative;
+    padding-left: 50%; 
+    padding-right: 20px; 
+    padding-left: 20px;
+  }
+  .price-table tr td:not(:first-child), .price-table tr th:not(:first-child) { 
+    width: 100%; 
+    padding-right: 20px; 
+    padding-left: 20px;
+    text-align: right;
+  }
+  .price-table tr td:first-child { 
+    width: 100%; 
+    text-align: center;
+    font-size: 17px;
+    line-height: 20px;
+    font-weight: 600;
+    margin-top: 20px;
+    padding-right: 20px; 
+    padding-left: 20px;
+  }
+  .price-table td:before { 
+    /* Now like a table header */
+    position: absolute;
+    /* Top/left values mimic padding */
+    top: 11px;
+    left: 0;
+    width: 50%; 
+    padding-right: 10px; 
+    white-space: nowrap;
+    padding-left: 20px;
+    text-align: left;
+  }
+  .price-table tr:last-child td::before {
+    padding-top: 9px;
+  }
+  .price-table tr:not(.promo-block) td:nth-of-type(2):before { content: "Тариф Mini"; }
+  .price-table tr:not(.promo-block) td:nth-of-type(3):before { content: "Тариф Standart"; }
+  .price-table tr:not(.promo-block) td:nth-of-type(4):before { content: "Тариф Maxi"; }
+  #discount-code {
+    line-height: 40px;
+  }
+  .pay-block .btn-price-bg {
+    width: 230px;
+  }
+  .pay-variant {
+    left: auto;
+    right: 20px;
+    width: 220px;
+  }
+}
